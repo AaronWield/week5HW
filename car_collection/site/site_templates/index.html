@@ -1,14 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% with messages = get_flashed_messages(with_categories = true) %}
+    {% if messages %}
+        {% for cat, msg in messages  %}
+            {% if cat == 'user-created' or cat == 'auth-success' %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ msg }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
     <div class="container">
         <header class="row">
             <div class="col-12 col-md-6" id ="header-text">
                 <h2>Do you have a dream car collection? Tell us all about it!</h2>
-                <h5>Join us, talk about, and show off your love of cars with fellow car lovers.</h5>
+                    <br>
+                <h5>Join us and show off your love of cars with fellow car enthusiasts.</h5>
+                    <br>
                 <div>
-                    <button class="btn btn-primary">Explore Collections</button>
-                    <button class="btn btn-primary">Sign Up</button>
+                    <button id="btn-home" class="btn btn-primary">Explore Collections</button>
+                    <a href="{{ url_for('auth.signup') }}">
+                        <button id="btn-home1" class="btn btn-primary">Sign Up</button>
+                    </a>
                 </div>
             </div>
 <!-- Header image area -->
@@ -21,6 +37,7 @@
             <div class="col-12" id="middle-text">
                 <h2>Join Our Community!</h2>
                 <p>Sign up, meet other car lovers, get car tips, and share your collection!</p>
+                <br>
                 <img src="../../static/images/car-evolution.png" alt="Evolution of Cars" id="car-evo">
             </div>
         </section>
@@ -32,7 +49,7 @@
             </div>
             <div class="col-12 col-md-4">
                 <h4>Show Off Your Collection</h4>
-                <p>Have a car collection that you are proud of? Show us! We love seeing </p>
+                <p>Have a car collection that you are proud of? Show us! We love seeing a proud collection. </p>
             </div>
             <div class="col-12 col-md-4">
                 <h4>Enjoy a Thriving Car Community</h4>
@@ -40,9 +57,11 @@
             </div>
         </section>
     <!-- Start of Community Section -->
+    <br>
+    <br>
     <section class="row">
         <div class="col-12 col-md-6">
-            <img src="../../static/images/undraw_by_my_car_ttge.svg" alt="Drone Image" id="drone-image">
+            <img src="../../static/images/undraw_by_my_car_ttge.svg" alt="Car Image" id="car-image-home">
         </div>
         <div class="col-12 col-md-6">
             <h4>Talk with like-minded car collectors</h4>
@@ -52,7 +71,7 @@
                 a star to the project on Github!
             </p>
             <div>
-                <button class="btn btn-primary">View on Github</button>
+                <button id="btn-home2" class="btn btn-primary">View on Github</button>
                 <button class="btn btn-primary">Join Our Slack Channel!</button>
             </div>
         </div>
@@ -60,39 +79,39 @@
 <!-- Footer Section -->
     <footer class="row" id="footer">
         <div class="col-2 col-md-2">
+            <div class="footer-text-flex">
+            </div>
+        </div>
+        <div class="col-2 col-md-2">
+            <div class="footer-text-flex">
+                <h4>Car Collection</h4>
+                <p>Example</p>
+                <p>Example</p>
+                <p>Example</p>
+                <p>Example</p>
+                <p>Example</p>
+            </div>
+        </div>
+        <div class="col-2 col-md-2">
+            <div class="footer-text-flex">
+            </div>
+        </div>
+        <div class="col-2 col-md-2">
+            <div class="footer-text-flex">
+                <h4>Car Collection</h4>
+                <p>Example</p>
+                <p>Example</p>
+                <p>Example</p>
+                <p>Example</p>
+                <p>Example</p>
+            </div>
+        </div>
+        <div class="col-2 col-md-2">
+            <div class="footer-text-flex">
+            </div>
+        </div>
+        <div class="col-2 col-md-2">
             <img src="../../static/images/car-nav-bar.png" alt="CD Logo" id="footer-logo">
-        </div>
-        <div class="col-2 col-md-2">
-            <div class="footer-text-flex">
-            </div>
-        </div>
-        <div class="col-2 col-md-2">
-            <div class="footer-text-flex">
-                <h4>Car Collection</h4>
-                <p>Example</p>
-                <p>Example</p>
-                <p>Example</p>
-                <p>Example</p>
-                <p>Example</p>
-            </div>
-        </div>
-        <div class="col-2 col-md-2">
-            <div class="footer-text-flex">
-            </div>
-        </div>
-        <div class="col-2 col-md-2">
-            <div class="footer-text-flex">
-                <h4>Car Collection</h4>
-                <p>Example</p>
-                <p>Example</p>
-                <p>Example</p>
-                <p>Example</p>
-                <p>Example</p>
-            </div>
-        </div>
-        <div class="col-2 col-md-2">
-            <div class="footer-text-flex">
-            </div>
         </div>   
     </footer>
     </div>

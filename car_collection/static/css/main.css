@@ -1,4 +1,5 @@
 /* Navigation Styling */
+
 .ct-nav{
     display: flex;
     justify-content: center;
@@ -45,6 +46,10 @@
 #car-evo{
     width: 100%;
 }
+#btn-home{
+    margin-left: 100px;
+    margin-right: 50px;
+}
 
 /* Features Section */
 #features-section{
@@ -52,10 +57,14 @@
 }
 
 /* Community Section */
-#drone-image{
+#car-image-home{
     width: 50%;
     max-width: 75%;
     margin-left: 3vw;
+}
+#btn-home2{
+    margin-left: 100px;
+    margin-right: 50px;
 }
 
 /* Footer Section */
@@ -71,6 +80,12 @@
 #footer{
     border-top: 3px solid black;
     margin-top: 20%;
+}
+
+/* Sign In Page */
+#password-field{
+    padding-bottom: 15px;
+    padding-top: 15px;
 }
 
 /* Sign Up Page */

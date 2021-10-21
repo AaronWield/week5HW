@@ -11,41 +11,40 @@
 <title>Car Collections</title>
 </head>
 <body>
-    <!-- Navbar section of base -->
     <nav class="ct-nav">
         <div>
-            <img src="../static/images/car-nav-bar.png" class = "car_nav_bar" alt="Logo">
+            <a href="{{ url_for('site.home') }}">
+                <img src="../static/images/car-nav-bar.png" class = "car_nav_bar" alt="Logo">
+            </a>
         </div>
-        <!-- Nav items begin here -->
         <div>
             <ul id="horizontal-list">
-                <a href="">
+                <a href="{{ url_for('site.home') }}">
                     <li>Home</li>
-                </a>
-                <a href="">
-                    <li>Donate</li>
                 </a>
                 <a href="">
                     <li>Collections</li>
                 </a>
-                <a href="">
-                    <li>Community</li>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('site.profile') }}">
+                    <li>Profile</li>
                 </a>
-                <a href="">
-                    <li>Blog</li>
+                <a href="{{url_for('auth.logout') }}">
+                    <li>Log Out</li>
                 </a>
+            {% else %}
                 <a href="{{ url_for('auth.signin') }}">
                     <li>Sign In</li>
                 </a>
                 <a href="{{ url_for('auth.signup') }}">
                     <li>Sign Up Free</li>
                 </a>
+            {% endif %} 
+                </a>
             </ul>
         </div>
     </nav>
 
-
-    <!-- Block content area.. marks the beginning and the end of a base -->
     {% block content %}
     {% endblock content %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
