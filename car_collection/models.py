@@ -65,7 +65,7 @@ class Car(db.Model):
         self.user_token = user_token
 
     def set_id(self):
-        return (secrets.token_urlsafe)
+        return (secrets.token_urlsafe())
 
 class CarSchema(ma.Schema):
     class Meta:
